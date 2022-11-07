@@ -66,13 +66,13 @@ function addLeadingZero(value) {
 }
 
 function onStartTimer() {
-  Notiflix.Notify.success('Date is correct! Countdown start!');
+  Notiflix.Notify.success('Date is correct! Timer starts!');
   btnRef.disabled = true;
 
   intervalId = setInterval(() => {
     deltaTime = futureTime.getTime() - Date.now();
     if (deltaTime < 1000) {
-      Notiflix.Notify.info('Timer is over!');
+      Notiflix.Notify.info('Time is over!');
       clearInterval(intervalId);
     }
     const { days, hours, minutes, seconds } = convertMs(deltaTime);
