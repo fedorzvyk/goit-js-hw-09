@@ -4,8 +4,8 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
-inputRef = document.getElementById('datetime-picker');
-btnRef = document.querySelector('[data-start]');
+const inputRef = document.getElementById('datetime-picker');
+const btnRef = document.querySelector('[data-start]');
 btnRef.disabled = true;
 let futureTime = null;
 let intervalId = null;
