@@ -71,12 +71,13 @@ function onStartTimer() {
 
   intervalId = setInterval(() => {
     deltaTime = futureTime.getTime() - Date.now();
-    if (deltaTime < 1000) {
+
+    const { days, hours, minutes, seconds } = convertMs(deltaTime);
+
+    if (seconds <= 0) {
       Notiflix.Notify.info('Time is over!');
       clearInterval(intervalId);
     }
-    const { days, hours, minutes, seconds } = convertMs(deltaTime);
-
     secondsRef.textContent = seconds;
     minutesRef.textContent = minutes;
     hoursRef.textContent = hours;
